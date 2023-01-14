@@ -1,0 +1,80 @@
+ "-------------------------------------- "Basic Scripts "-------------------------------------- "-------------------------------------------------------------------------------------------| "  Modes     | Normal | Insert | Command | Visual | Select | Operator | Terminal | Lang-Arg | " [nore]map  |    @   |   -    |    -    |   @    |   @    |    @     |    -     |    -     | " n[nore]map |    @   |   -    |    -    |   -    |   -    |    -     |    -     |    -     | " n[orem]ap! |    -   |   @    |    @    |   -    |   -    |    -     |    -     |    -     |
+ " i[nore]map |    -   |   @    |    -    |   -    |   -    |    -     |    -     |    -     |
+ " c[nore]map |    -   |   -    |    @    |   -    |   -    |    -     |    -     |    -     |
+ " v[nore]map |    -   |   -    |    -    |   @    |   @    |    -     |    -     |    -     |
+ " x[nore]map |    -   |   -    |    -    |   @    |   -    |    -     |    -     |    -     |
+ " s[nore]map |    -   |   -    |    -    |   -    |   @    |    -     |    -     |    -     |
+ " o[nore]map |    -   |   -    |    -    |   -    |   -    |    @     |    -     |    -     |
+ " t[nore]map |    -   |   -    |    -    |   -    |   -    |    -     |    @     |    -     |
+ " l[nore]map |    -   |   @    |    @    |   -    |   -    |    -     |    -     |    @     |
+ "-------------------------------------------------------------------------------------------
+ set belloff=all
+ set number
+ set scrolloff=8
+ let g:mapleader = "\<Space>"
+ nnoremap <Leader>w :w<CR>
+ nnoremap <Leader>l $
+ nnoremap <Leader>h ^
+ nnoremap <Leader>k <C-u>
+ nnoremap <Leader>j <C-d>
+ nnoremap <Leader>fh :History<CR>
+ nnoremap <Leader>a ggVG<CR>
+ nnoremap <CR> o<ESC>
+ nnoremap a $a
+ vnoremap <Tab> >gv
+ vnoremap <S-Tab> <gv
+ nnoremap <Tab> >>
+ nnoremap <S-Tab> <<
+ set autoread
+ augroup vimrc-checktime
+         autocmd!
+         autocmd WinEnter * checktime
+ augroup END
+
+
+ "--------------------------------------
+ "dein Scripts
+ "--------------------------------------
+ if &compatible
+   set nocompatible               " Be iMproved
+ endif
+
+ " Required:
+ set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+
+ " Required:
+ if dein#load_state('$HOME/.cache/dein')
+   call dein#begin('$HOME/.cache/dein')
+
+   " Let dein manage dein
+   " Required:
+   call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+   " Add or remove your plugins here:
+   call dein#add('Shougo/neosnippet.vim')
+   call dein#add('Shougo/neosnippet-snippets')
+   call dein#add('Shougo/unite.vim')
+   call dein#add('Shougo/neomru.vim')
+   call dein#add('junegunn/fzf', {'build':'./install --all'})
+   call dein#add('junegunn/fzf.vim')
+
+   " You can specify revision/branch/tag.
+   call dein#add('preservim/nerdtree')
+
+
+   " Required:
+   call dein#end()
+   call dein#save_state()
+ endif
+
+ " Required:
+ filetype plugin indent on
+ syntax enable
+
+ " If you want to install not installed plugins on startup.
+ if dein#check_install()
+   call dein#install()
+ endif
+
+ "End dein Scripts-------------------------
+
