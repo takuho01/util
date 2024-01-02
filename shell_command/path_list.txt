@@ -1,0 +1,3 @@
+home : ~
+util : /home/takuho/util
+shell_command :  /home/takuho/util/shell_command
