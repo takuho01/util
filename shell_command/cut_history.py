@@ -39,5 +39,5 @@ def edit_command_history(history_file_path, except_cmds):
 
 # Example usage
 history_file = '/home/takuho/history.txt'  # Replace with the actual path to your history file
-except_commands = ['cd', 'less', 'ls', 'history']
+except_commands = ['cd', 'less', 'ls', 'history', 'tcsh']
 edit_command_history(history_file, except_commands)
