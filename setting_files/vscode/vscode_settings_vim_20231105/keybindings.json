@@ -1,0 +1,55 @@
+// Place your key bindings in this file to override the defaults
+[
+    {"key": "ctrl+tab","command": "workbench.action.focusNextGroup",},
+    {"key": "ctrl+shift+tab","command": "workbench.action.focusPreviousGroup",},
+    {"key": "ctrl+1","command": "workbench.action.focusNextGroup",},
+    {"key": "ctrl+shift+1","command": "workbench.action.focusPreviousGroup",},
+// pane switching
+    { "key": "ctrl+n","command": "workbench.action.files.newUntitledFile",},
+// pane switching in terminal
+    // {"key": "ctrl+k","command": "workbench.action.focusNextPart","when": "terminalFocus"},
+    // {"key": "ctrl+j","command": "workbench.action.focusPreviousPart","when": "terminalFocus"},
+    {"key": "ctrl+j","command": "workbench.action.terminal.focusNextPane","when": "terminalFocus"},
+    {"key": "ctrl+k","command": "workbench.action.terminal.focusPreviousPane","when": "terminalFocus"},
+
+    { "key": "ctrl+e",                "command": "workbench.action.quickOpen" },
+    { "key": "ctrl+b",                "command": "workbench.action.toggleSidebarVisibility" },
+    { "key": "ctrl+shift+j",                "command": "workbench.action.decreaseViewHeight" },
+    { "key": "ctrl+shift+k",                "command": "workbench.action.increaseViewHeight" },
+    { "key": "ctrl+shift+l",                "command": "workbench.action.decreaseViewWidth" },
+    { "key": "ctrl+shift+h",               "command": "workbench.action.increaseViewWidth" },
+
+    { "key": "ctrl+shift+[", "command": "editor.foldAll","when": "editorTextFocus && foldingEnabled" },
+
+    { "key": "ctrl+shift+]","command": "editor.unfoldAll",
+        "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+[","command": "editor.foldRecursively",
+        "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+]","command": "editor.unfoldRecursively",
+        "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+8","command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+9","command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+]
