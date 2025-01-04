@@ -59,8 +59,9 @@
     "*": "${documentWorkspaceFolder}/IMG/${documentBaseName}/"
 },
 "markdown.preview.breaks": true,
-"editor.unicodeHighlight.includeStrings": false
-    
+"editor.unicodeHighlight.includeStrings": false,
+"workbench.editor.showTabs": "single",
+"workspaceKeybindings.vscode_note.enabled": true,
 
 
 }

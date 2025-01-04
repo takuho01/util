@@ -1,37 +1,176 @@
 // Place your key bindings in this file to override the defaults
 [
-    {
-        "key": "ctrl+shift+-",
-        "command": "type",
-        "args": { "text": "-------------------" },
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+oem_3",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
-    {
-        "key": "ctrl+oem_period",
-        "command": "markdown.extension.editing.toggleList"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "-markdown.extension.editing.toggleMath",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "-editor.action.toggleTabFocusMode"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "workbench.action.moveEditorToNewWindow"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "-markdown.extension.editing.toggleBold",
-        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-    },
-
-
-]
+    
+    // --- basic setting ---
+        {
+            "key": "ctrl+shift+-",
+            "command": "type",
+            "args": { "text": "-------------------" },
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+m",
+            "command": "-markdown.extension.editing.toggleMath",
+            "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+        },
+        {
+            "key": "ctrl+m",
+            "command": "-editor.action.toggleTabFocusMode"
+        },
+        {
+            "key": "ctrl+m",
+            "command": "workbench.action.moveEditorToNewWindow"
+        },
+        {
+            "key": "ctrl+b",
+            "command": "-markdown.extension.editing.toggleBold",
+            "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+        },
+        
+        
+        
+    // --- vscode note workspace setting ---
+        {
+            "key": "ctrl+oem_period",
+            "command": "markdown.extension.editing.toggleList",
+            "when": "config.workspaceKeybindings.vscode_note.enabled",
+        },
+        // {
+        //     "key": "ctrl+3",
+        //     "command": "markdown.extension.editing.toggleHeadingUp",
+        //     "when": "config.workspaceKeybindings.vscode_note.enabled",
+        // },
+        // {
+        //     "key": "ctrl+2",
+        //     "command": "markdown.extension.editing.toggleHeadingDown",
+        //     "when": "config.workspaceKeybindings.vscode_note.enabled",
+        // },
+        
+     
+        
+    // --- vim like pane move ---
+        {
+            "key": "ctrl+w h",
+            "command": "workbench.action.focusLeftGroup"
+        },
+        {
+            "key": "ctrl+w l",
+            "command": "workbench.action.focusRightGroup"
+        },
+        {
+            "key": "ctrl+w k",
+            "command": "workbench.action.focusAboveGroup"
+        },
+        {
+            "key": "ctrl+w j",
+            "command": "workbench.action.focusBelowGroup"
+        },
+        {
+            "key": "ctrl+w ctrl+w",
+            "command": "workbench.action.closeActiveEditor"
+        },
+        {
+            "key": "ctrl+w",
+            "command": "-workbench.action.closeActiveEditor"
+        },
+        {
+            "key": "ctrl+w ctrl+w",
+            "command": "workbench.action.terminal.killEditor",
+            "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+        },
+        {
+            "key": "ctrl+w",
+            "command": "-workbench.action.terminal.killEditor",
+            "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+        },
+        
+        
+    // --- zoom ---
+        {
+            "key": "ctrl+oem_plus",
+            "command": "editor.action.fontZoomIn"
+        },
+        {
+            "key": "ctrl+oem_minus",
+            "command": "editor.action.fontZoomOut"
+        },
+        {
+            "key": "ctrl+oem_plus",
+            "command": "-workbench.action.zoomIn"
+        },
+        {
+            "key": "ctrl+oem_minus",
+            "command": "-workbench.action.zoomOut"
+        },
+        {
+            "key": "ctrl+alt+oem_minus",
+            "command": "workbench.action.zoomOut"
+        },
+        {
+            "key": "ctrl+shift+oem_minus",
+            "command": "-workbench.action.zoomOut"
+        },
+        {
+            "key": "ctrl+alt+oem_plus",
+            "command": "workbench.action.zoomIn"
+        },
+        {
+            "key": "ctrl+shift+oem_plus",
+            "command": "-workbench.action.zoomIn"
+        },
+    
+        
+        
+    // --- pane size adjust ---
+        {
+            "key": "ctrl+shift+h",
+            "command": "workbench.action.decreaseViewWidth",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+shift+l",
+            "command": "workbench.action.increaseViewWidth",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+shift+k",
+            "command": "workbench.action.increaseViewHeight",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+shift+j",
+            "command": "workbench.action.decreaseViewHeight",
+            "when": "editorTextFocus"
+        },
+        
+    
+        
+    // --- terminal editor switching ---
+        {
+            "key": "ctrl+oem_3",
+            "command": "workbench.action.terminal.focus",
+            "when": "editorTextFocus"
+        },
+        // {
+        //     "key": "ctrl+oem_3",
+        //     "command": "workbench.action.focusFirstEditorGroup",
+        //     "when": "terminalFocus"
+        // },
+        {
+            "key": "ctrl+shift+oem_3",
+            "command": "-workbench.action.terminal.new",
+            "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+        },
+        {
+            "key": "ctrl+shift+oem_3",
+            "command": "workbench.action.terminal.toggleTerminal",
+            "when": "terminal.active"
+        },
+        {
+            "key": "ctrl+oem_3",
+            "command": "-workbench.action.terminal.toggleTerminal",
+            "when": "terminal.active"
+        },
+        
+    
+    ]
