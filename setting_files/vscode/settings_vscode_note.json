@@ -49,7 +49,7 @@
          {
             "scope": "comment.block.html",
             "settings": {
-                "foreground": "#69717c",
+                "foreground": "#738193",
             }
         },
          
@@ -58,7 +58,8 @@
 "markdown.copyFiles.destination": {
     "*": "${documentWorkspaceFolder}/IMG/${documentBaseName}/"
 },
-"markdown.preview.breaks": true
+"markdown.preview.breaks": true,
+"editor.unicodeHighlight.includeStrings": false
     
 
 
