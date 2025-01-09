@@ -127,5 +127,8 @@ alias gtmplog="/home/takuho/util/command/gtmplog"
 alias sc="screen"
 
 export SCREENDIR=$HOME/.screen
-
+# PS1="\[\e[36m\e[42m\][\u@\h \W \d \t]\[\e[0m\]\n\\$ "
+# PS1="[\u@\h \W]\$ "
+# PS1='\u@\h:$(echo "\w" | sed -e "/^.\{50,\}$/s/^\(.\{25\}\).*\(.\{25\}\)$/\1...\2/")\n\$ '
+PS1='\[\e[1;32m\]\u@\h\[\e[m\]:\[\e[1;34m\]\w\[\e[m\]\n\$'
 
