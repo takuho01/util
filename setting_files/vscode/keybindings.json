@@ -26,7 +26,11 @@
             "command": "-markdown.extension.editing.toggleBold",
             "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
         },
-        
+        {
+            "key": "ctrl+a ctrl+a",
+            "command": "editor.action.selectAll",
+            "when": "editorFocus"
+        },        
         
         
     // --- vscode note workspace setting ---
@@ -54,7 +58,15 @@
             "command": "workbench.action.focusLeftGroup"
         },
         {
+            "key": "ctrl+w ctrl+h",
+            "command": "workbench.action.focusLeftGroup"
+        },
+        {
             "key": "ctrl+w l",
+            "command": "workbench.action.focusRightGroup"
+        },
+        {
+            "key": "ctrl+w ctrl+l",
             "command": "workbench.action.focusRightGroup"
         },
         {
@@ -83,8 +95,21 @@
             "command": "-workbench.action.terminal.killEditor",
             "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
         },
-        
-        
+        {
+            "key": "ctrl+w shift+oem_5",
+            "command": "workbench.action.splitEditor",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+w oem_minus",
+            "command": "workbench.action.splitEditorToBelowGroup",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+w shift+oem_minus",
+            "command": "workbench.action.evenEditorWidths",
+            "when": "editorTextFocus"
+        },
     // --- zoom ---
         {
             "key": "ctrl+oem_plus",
@@ -146,30 +171,90 @@
     
         
     // --- terminal editor switching ---
-        {
-            "key": "ctrl+oem_3",
-            "command": "workbench.action.terminal.focus",
-            "when": "editorTextFocus"
-        },
         // {
         //     "key": "ctrl+oem_3",
-        //     "command": "workbench.action.focusFirstEditorGroup",
-        //     "when": "terminalFocus"
+        //     "command": "workbench.action.terminal.focus",
+        //     "when": "editorTextFocus"
         // },
-        {
-            "key": "ctrl+shift+oem_3",
-            "command": "-workbench.action.terminal.new",
-            "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-        },
         {
             "key": "ctrl+shift+oem_3",
             "command": "workbench.action.terminal.toggleTerminal",
             "when": "terminal.active"
         },
         {
-            "key": "ctrl+oem_3",
-            "command": "-workbench.action.terminal.toggleTerminal",
-            "when": "terminal.active"
+            "key": "ctrl+a l",
+            "command": "workbench.action.terminal.focusNextPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a ctrl+l",
+            "command": "workbench.action.terminal.focusNextPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a tab",
+            "command": "workbench.action.terminal.focusNextPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a h",
+            "command": "workbench.action.terminal.focusPreviousPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a ctrl+h",
+            "command": "workbench.action.terminal.focusPreviousPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a shift+tab",
+            "command": "workbench.action.terminal.focusPreviousPane",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a shift+oem_5",
+            "command": "workbench.action.terminal.split",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a x",
+            "command": "workbench.action.terminal.kill",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a k",
+            "command": "workbench.action.focusLastEditorGroup",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a ctrl+k",
+            "command": "workbench.action.focusLastEditorGroup",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a oem_3",
+            "command": "workbench.action.terminal.focus",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+a ctrl+oem_3",
+            "command": "workbench.action.terminal.focus",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "ctrl+a shift+oem_3",
+            "command": "workbench.action.focusLastEditorGroup",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+a ctrl+shift+oem_3",
+            "command": "workbench.action.focusLastEditorGroup",
+            "when": "terminalFocus"
+        },
+        {
+            "key": "ctrl+shift+oem_3",
+            "command": "-workbench.action.terminal.new",
+            "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
         },
         
     
