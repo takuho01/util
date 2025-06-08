@@ -1,7 +1,7 @@
 #! /bin/tcsh -x
 
 set OUTPUT_LINE = ""
-set RESET_INPUT = ""
+set CLEAR_INPUT = ""
 
 if ( ! $?POSITIONAL_ARGS ) then
     set POSITIONAL_ARGS = ()
@@ -11,8 +11,8 @@ while ($#argv > 0)
     switch ($argv[1])
         case "-l": case "--line": 
             set OUTPUT_LINE = "OUTPUT_LINE"; shift argv; breaksw
-        case "-r": case "--reset": 
-            set RESET_INPUT = "RESET_INPUT"; shift argv; breaksw
+        case "-c": case "--clear": 
+            set CLEAR_INPUT = "CLEAR_INPUT"; shift argv; breaksw
         # to send argv for ff, this option is cut off.
         # case -*: 
         #     echo "[ERROR] Unknown option $argv[1]"; exit 1; breaksw
@@ -26,8 +26,8 @@ echo "$POSITIONAL_ARGS"
 fim --up $POSITIONAL_ARGS > $tmpfile
 set count = `wc -l < $tmpfile`
 
-if ( "$RESET_INPUT" == "RESET_INPUT" ) then
-    echo "RESET_INPUT"
+if ( "$CLEAR_INPUT" == "CLEAR_INPUT" ) then
+    echo "CLEAR_INPUT"
     set POSITIONAL_ARGS = ()
 else if ( $count == 1 ) then
     set fim_var = "`head -1 $tmpfile`"

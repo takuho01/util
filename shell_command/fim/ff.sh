@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OUTPUT_LINE=""
-RESET_INPUT=""
+CLEAR_INPUT=""
 
 if [ -z "$POSITIONAL_ARGS" ]; then
     POSITIONAL_ARGS=()
@@ -14,8 +14,8 @@ while [[ $# -gt 0 ]]; do
             OUTPUT_LINE="OUTPUT_LINE"
             shift
             ;;
-        -r|--reset)
-            RESET_INPUT="RESET_INPUT"
+        -c|--clear)
+            CLEAR_INPUT="CLEAR_INPUT"
             shift
             ;;
         # to send argv for ff, this option is cut off.
@@ -32,33 +32,45 @@ done
 # set -- "${POSITIONAL_ARGS[@]}"
 
 tmpfile="$HOME/tmp/ff_output"
-echo "${POSITIONAL_ARGS[@]}" 
+# echo "${POSITIONAL_ARGS[@]}" 
 fim --up "${POSITIONAL_ARGS[@]}" > "$tmpfile"
 count=$(wc -l < "$tmpfile")
 
 
-if [[ "$RESET_INPUT" == "RESET_INPUT" ]]; then
-    echo "RESET_INPUT"
+if [[ "$CLEAR_INPUT" == "CLEAR_INPUT" ]]; then
+    echo "CLEAR_INPUT"
     POSITIONAL_ARGS=()
 elif [[ $count -eq 1 ]]; then
     fim_var=$(head -1 "$tmpfile")
+    echo ""
+    echo "[RESULT]"
     cat "$tmpfile"
     echo ""
-    echo "input :  ${POSITIONAL_ARGS[@]}"
-    echo "[fim_var] --> $fim_var"
+    echo "[input]"
+    echo "${POSITIONAL_ARGS[@]}"
+    echo ""
+    echo "[fullpath]"
     realpath "$fim_var"
+    echo ""
+    echo "[fim_var] -> $fim_var"
     echo ""
 elif [[ $count -gt 1 ]]; then
     if [[ "$OUTPUT_LINE" == "OUTPUT_LINE" ]]; then
+        echo ""
+        echo "[RESULT]"
         cat "$tmpfile"
         echo ""
         echo ""
-        echo "input :  ${POSITIONAL_ARGS[@]}"
+        echo "[input]"
+        echo "${POSITIONAL_ARGS[@]}"
     else
+        echo ""
+        echo "[RESULT]"
         cat "$tmpfile" | perl -0777 -pe 's/\n/  /g'
         echo ""
         echo ""
-        echo "input :  ${POSITIONAL_ARGS[@]}"
+        echo "[input]"
+        echo "${POSITIONAL_ARGS[@]}"
     fi
 else
     echo "input :  ${POSITIONAL_ARGS[@]}"

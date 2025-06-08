@@ -1,0 +1,17 @@
+{
+    "up": false,
+    "maxdepth": null,
+    "grep_dir": [],
+    "grep_e_dir": [],
+    "cut": [],
+    "fullpath": false,
+    "cmd": true,
+    "dir": false,
+    "file": false,
+    "pgrep": null,
+    "input": [
+        "./hoge.json",
+        "--ijson_update"
+    ],
+    "show_options": true
+}
