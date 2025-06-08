@@ -1,0 +1,20 @@
+{
+  "name": "logseq-duplicate-line",
+  "description": "Insert a blank line at the same indent as the current block.",
+  "author": "",
+  "license": "MIT",
+  "logseq": {
+    "id": "duplicate-line",
+    "title": "Duplicate Line",
+    "icon": "./icon.svg",
+    "main": "./dist/index.html",
+    "commands": [
+      {
+        "key": "duplicate-line",
+        "name": "Duplicate Line",
+        "label": "Duplicate Line"
+      }
+    ]
+  },
+  "version": "1.0.0"
+}
