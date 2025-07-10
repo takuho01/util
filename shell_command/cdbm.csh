@@ -9,3 +9,7 @@ set selected_path = `cat ${path_list_file} | fzf --reverse | sed -e "s/^.*://"`
 if ( "$selected_path" != "" ) then
     cd "$selected_path"
 endif
+
+
+
+
