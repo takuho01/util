@@ -1,0 +1,19 @@
+{
+  "interfaceFontFamily": "PlemolJP HS",
+  "textFontFamily": "PlemolJP HS",
+  "enabledCssSnippets": [
+    "any_setting",
+    "card_view_style",
+    "Cards",
+    "editor",
+    "imgsize",
+    "title_design"
+  ],
+  "cssTheme": "",
+  "showRibbon": false,
+  "baseFontSizeAction": true,
+  "baseFontSize": 11,
+  "theme": "moonstone",
+  "monospaceFontFamily": "PlemolJP HS",
+  "showViewHeader": true
+}
