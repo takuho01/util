@@ -1,0 +1,21 @@
+formulas:
+  Untitled: if(["jpg","gif","webp","jpeg","avif","png"].contains(file.embeds[0].asFile().ext), file.embeds[0])
+properties:
+  formula.Untitled:
+    displayName: thumbnail
+views:
+  - type: cards
+    name: View
+    filters:
+      and:
+        - pin_note == "keep"
+        - file.folder == "notes"
+    order:
+      - file.name
+    sort:
+      - property: file.mtime
+        direction: DESC
+    image: formula.Untitled
+    imageFit: contain
+    imageAspectRatio: 0.55
+    cardSize: 130

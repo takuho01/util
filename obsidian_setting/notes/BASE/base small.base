@@ -1,0 +1,21 @@
+formulas:
+  thumbnail: if(["jpg","gif","webp","jpeg","avif","png"].contains(file.embeds[0].asFile().ext), file.embeds[0])
+views:
+  - type: cards
+    name: small
+    filters:
+      and:
+        - file.inFolder("notes")
+        - pin_note != "keep"
+    order:
+      - tags
+      - file.basename
+    sort:
+      - property: pin_note
+        direction: ASC
+      - property: file.mtime
+        direction: DESC
+    image: formula.thumbnail
+    cardSize: 150
+    imageFit: contain
+    imageAspectRatio: 0.55
